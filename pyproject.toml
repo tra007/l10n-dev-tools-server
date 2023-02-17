@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "l10n-dev-tools-server"
+version = "0.0.0"
+description = "Get/Update/Upgrade applications l10n files"
+authors = ["Asncodes-80 <asn80.asn@hotmail.com>"]
+license = "GPL-3"
+readme = "README.md"
+packages = [{ include = "l10n_dev_tools_server" }]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+django-admin = "^2.0.2"
+djangorestframework = "^3.14.0"
+drf-spectacular = "^0.25.1"
+dataclasses-json = "^0.5.7"
+djangorestframework-dataclasses = "^1.2.0"
+djangorestframework-simplejwt = "^5.2.2"
+python-dotenv = "^0.21.1"
+psycopg2-binary = "^2.9.5"
+sqlparse = "^0.4.3"
+asgiref = "^3.6.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
