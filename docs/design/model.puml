@@ -1,0 +1,24 @@
+@startuml L10nDesignModel
+
+class L10nApp {
+ # string app_bundle_id {classifier}
+ + string app_name
+ + string app_descriptions
+ - datetime created_at
+ - datetime updated_at
+ - datetime deleted_at
+}
+
+class L10nAppTranslations {
+ # int translation_id {classifier}
+ # string app_bundle_id {classifier}
+ + string locale
+ + text translation
+ - datetime created_at
+ - datetime updated_at
+ - datetime deleted_at
+}
+
+L10nApp <|-- L10nAppTranslations
+
+@enduml
