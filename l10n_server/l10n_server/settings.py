@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "l10n_apps.apps.L10NAppsConfig",
     "l10n_app_translations.apps.L10NAppTranslationsConfig",
+    "utils.apps.UtilsConfig",
 ]
 
 MIDDLEWARE = [
