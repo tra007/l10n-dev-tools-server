@@ -43,9 +43,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
-    "l10n_apps.apps.L10NAppsConfig",
-    "l10n_app_translations.apps.L10NAppTranslationsConfig",
-    "utils.apps.UtilsConfig",
+    "repositories.apps.RepositoriesConfig",
+    "locales.apps.LocalesConfig",
 ]
 
 MIDDLEWARE = [

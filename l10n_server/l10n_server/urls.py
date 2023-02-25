@@ -24,8 +24,8 @@ urlpatterns = [
         "api/v0/",
         include(
             [
-                path("apps/", include("l10n_apps.urls")),
-                path("translations/", include("l10n_app_translations.urls")),
+                path("apps/", include("repositories.urls")),
+                path("locales/", include("locales.urls")),
             ]
         ),
     ),
