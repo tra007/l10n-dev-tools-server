@@ -11,7 +11,7 @@ class L10Apps(GlobalModel):
     )  # app_243fr#d
     name = models.CharField(max_length=30)  # Application-name
     descriptions = models.CharField(max_length=60, blank=True)
-    created_at = models.DateTimeField(auto_now=False, auto_now_add=True)
+    created_at = models.DateTimeField(auto_now=True, auto_now_add=False)
     updated_at = models.DateTimeField(
         auto_now=True,
         auto_now_add=False,

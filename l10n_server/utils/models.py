@@ -20,7 +20,11 @@ class GlobalModel(models.Model):
     - Return all data that's not deleted: `Model.all_objects.all()`
     """
 
-    deleted_at = models.DateTimeField(null=True, default=None)
+    deleted_at = models.DateTimeField(
+        null=True,
+        default=None,
+        blank=True,
+    )
     objects = GlobalModelManager()
     all_objects = models.Manager()
 
