@@ -14,6 +14,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
+from datetime import timedelta
 
 # Load .env file
 load_dotenv()
@@ -43,10 +44,12 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "rest_framework",
     "corsheaders",
+    "rest_framework",
+    "rest_framework_simplejwt",
     "repositories.apps.RepositoriesConfig",
     "locales.apps.LocalesConfig",
+    "account.apps.AccountConfig",
 ]
 
 MIDDLEWARE = [
@@ -99,6 +102,25 @@ DATABASES = {
     # }
 }
 
+AUTH_USER_MODEL = "account.UserData"
+
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASS": [
+        # Django JWT setup
+        "rest_framework_simplejwt_authentication.JWTAuthentication"
+    ]
+}
+
+SIMPLE_JWT = {
+    "SIGNING_KEY": SECRET_KEY,
+    "ACCESS_TOKEN_LIFETIME": timedelta(days=5),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=90),
+    "ALGORITHM": "HS256",
+    "AUTH_HEADER_TYPES": ("Bearer",),
+    "SLIDING_TOKEN_LIFETIME": timedelta(minutes=59),
+    "SLIDING_TOKEN_REFRESH_LIFETIME": timedelta(days=1),
+}
+
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -122,10 +144,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Cross origins settings
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIAL = True
-CORS_ALLOWED_ORIGINS = ["http://localhost:/8000"]
-CORS_ALLOWED_ORIGIN_REGEXES = [
-    "http://localhost:8000",
-]
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
