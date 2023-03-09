@@ -70,6 +70,17 @@ django-excel-response2 = ">=3.0.0"
 django-six = "*"
 
 [[package]]
+name = "django-cors-headers"
+version = "3.14.0"
+description = "django-cors-headers is a Django application for handling the server headers required for Cross-Origin Resource Sharing (CORS)."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+Django = ">=3.2"
+
+[[package]]
 name = "django-excel-base"
 version = "1.0.5"
 description = "Django Excel Base"
@@ -355,7 +366,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "beb0e10286875de36c65ffba72906c537d78a227421f22e4691a48352544dc6f"
+content-hash = "e3091d34007372e5525100ae91c4fa6fb283ff76868684f98129323b2ebd8907"
 
 [metadata.files]
 asgiref = [
@@ -377,6 +388,10 @@ django = [
 django-admin = [
     {file = "django-admin-2.0.2.tar.gz", hash = "sha256:43c9f94ca5ad498789c0282691931c609c8e26db61aeb49ae8ad90d15b80cb75"},
     {file = "django_admin-2.0.2-py2.py3-none-any.whl", hash = "sha256:a92f9fb21f63edabb5db9030f36b62c6c16a0187183e7e7de4142aee4472b70f"},
+]
+django-cors-headers = [
+    {file = "django_cors_headers-3.14.0-py3-none-any.whl", hash = "sha256:684180013cc7277bdd8702b80a3c5a4b3fcae4abb2bf134dceb9f5dfe300228e"},
+    {file = "django_cors_headers-3.14.0.tar.gz", hash = "sha256:5fbd58a6fb4119d975754b2bc090f35ec160a8373f276612c675b00e8a138739"},
 ]
 django-excel-base = [
     {file = "django-excel-base-1.0.5.tar.gz", hash = "sha256:9f837e491d51e11064c5b7d25c86b767f5f995f962ede278ef6ce5503c0a1ab3"},

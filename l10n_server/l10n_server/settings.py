@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+
 import os
 from pathlib import Path
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "rest_framework",
+    "corsheaders",
     "repositories.apps.RepositoriesConfig",
     "locales.apps.LocalesConfig",
 ]
@@ -55,6 +57,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "corsheaders.middleware.CorsMiddleware",
 ]
 
 ROOT_URLCONF = "l10n_server.urls"
@@ -115,6 +118,14 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+# Cross origins settings
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIAL = True
+CORS_ALLOWED_ORIGINS = ["http://localhost:/8000"]
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    "http://localhost:8000",
+]
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/
