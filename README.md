@@ -29,9 +29,15 @@ docker exec -it l10n_psql psql -U root -W l10n
     - [ ] Create Locale [POST]
     - [ ] Update Locale by id [PUT]
     - [ ] Delete Locale by id [DELETE]
-- [ ] Create Authentications
-    - [ ] Generate JWT {access, refresh}
-    - [ ] Users
-        - [ ] Sign-up
-        - [ ] Sign-in
+- [x] Create Authentications
+    - [x] Generate JWT {access, refresh}
+    - [x] Users
+        - [x] Sign-up
+        - [x] Sign-in
+    - [ ] Validate user from header
 - [x] Add CORS middleware
+
+## To know: How it happened
+
+- [ ] is require field detection in model?
+- [ ] is data duplicate?

@@ -1,5 +1,19 @@
 @startuml L10nDesignModel
 
+class User {
+    # int user_id {classifier}
+    + string username {classifier}S
+    - string password
+    + string first_name
+    + string last_name
+    + string email
+    + boolean is_admin
+    + boolean is_staff
+    + boolean is_superuser
+    + boolean is_active
+    + DateTime date_of_joined
+}
+
 class L10nApp {
  # string app_bundle_id {classifier}
  + string app_name
